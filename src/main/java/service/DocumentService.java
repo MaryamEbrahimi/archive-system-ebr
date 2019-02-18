@@ -2,6 +2,7 @@ package service;
 
 import model.Document;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -12,6 +13,10 @@ public interface DocumentService {
     Document loadByUniqueIdentifier(String uniqueIdentifier);
 
     Document loadByName(String name);
+
+    Document loadByNameAndType (String name, String type);
+
+    public List<Document> loadByDateRange(Date date1, Date date2);
 
     List<Document> loadByTag(String tag);
 
@@ -24,5 +29,4 @@ public interface DocumentService {
     void deleteByTags(Set<String> tags);
 
     void deleteByUniqueIdentifier(Document document);
-
 }

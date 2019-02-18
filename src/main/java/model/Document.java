@@ -3,6 +3,7 @@ package model;
 import service.InvalidTagsNumberException;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,12 +14,17 @@ public class Document {
     private String uniqueIdentifier;
     private String name;
     private String type;
+    private Date date;
+    private String createdBy;
     private List<Document> attachments = new ArrayList<>();
     private List<String> tags = new ArrayList<>();
 
+    Document(String createdBy){
+     this.createdBy = createdBy;
+    }
+
     public Document() {
-        String myGloballyUniqueIdentifier = UUID.randomUUID().toString();
-        this.uniqueIdentifier = myGloballyUniqueIdentifier;
+        this.uniqueIdentifier = UUID.randomUUID().toString();
     }
 
     public String getUniqueIdentifier() {
@@ -39,6 +45,22 @@ public class Document {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     public List<Document> getAttachments() {

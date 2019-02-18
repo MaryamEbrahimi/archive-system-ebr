@@ -3,6 +3,7 @@ package service.impl;
 import model.Document;
 import service.DocumentService;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -19,6 +20,15 @@ public class DocumentServiceImpl implements DocumentService {
         return null;
     }
 
+    @Override
+    public Document loadByNameAndType(String name, String type) {
+        return null;
+    }
+
+    public List<Document> loadByDateRange(Date date1, Date date2) {
+        return null;
+    }
+
     public List<Document> loadByTag(String tag) {
         return null;
     }
@@ -32,14 +42,11 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     public void update(Document document) {
-
     }
 
     public void deleteByTags(Set tags) {
-
     }
 
     public void deleteByUniqueIdentifier(Document document) {
-
     }
 }

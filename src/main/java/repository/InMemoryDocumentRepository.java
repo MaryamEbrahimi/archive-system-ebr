@@ -3,6 +3,7 @@ package repository;
 import model.Document;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +25,10 @@ public class InMemoryDocumentRepository implements DocumentRepository {
 
     @Override
     public void saveDocument(Document document) {
+        Date currentDate = new Date();
+        document.setDate(currentDate);
         documentList.add(document);
+
     }
 
     @Override
